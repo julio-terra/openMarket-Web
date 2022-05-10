@@ -61,7 +61,15 @@ const Navbar = () =>{
                 Search
               </Link>
             </li>
-            <li className="nav-item bg-secondary px-4 rounded">
+            <li className="nav-item active">
+              <Link
+                to="/card"
+                className="nav-link"
+              >
+                Card
+              </Link>
+            </li>
+            <li className="nav-item bg-secondary px-4">
               <div
                 className="nav-link"
                 onClick={() => signOut()}

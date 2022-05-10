@@ -13,7 +13,7 @@ const Product = ({_id, photo, name, price}) =>{
   }
   const to = `/product/${_id}`;
   return(
-    <div className="bg-dark product bg-dark">
+    <div className="bg-dark product bg-dark animation-in">
       <img
         className="bg-white"
         src={photo}

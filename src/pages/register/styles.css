@@ -3,7 +3,8 @@
     border-radius: 5px;
 }
 .register-box small{
-    font-weight: bold;
+    font-weight: 400;
+    font-size: 14px;
 }
 .login{
     font-size: 13px;

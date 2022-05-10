@@ -18,7 +18,7 @@ const Home = () =>{
   return(
     <div className="container-fluid bg-primary">
       <div className="container home-section">
-        <h3 className="text-secondary">technology</h3>
+        <h3 className="text-secondary">Technology</h3>
         <Slider className="mt-5">
           {
           productData?.filter(p =>p.category === 'technology')
@@ -36,7 +36,7 @@ const Home = () =>{
         </div>
       </div>
       <div className="container home-section">
-        <h3 className="text-secondary">fashion</h3>
+        <h3 className="text-secondary">Fashion</h3>
         <Slider className="mt-5">
           {
           productData?.filter(p =>p.category === 'fashion')
@@ -54,7 +54,7 @@ const Home = () =>{
         </div>
       </div>
       <div className="container home-section">
-        <h3 className="text-secondary">portion</h3>
+        <h3 className="text-secondary">Portion</h3>
         <Slider className="mt-5">
           {
           productData?.filter(p =>p.category === 'portion')

@@ -6,7 +6,7 @@ import { AuthProvider } from './hooks/auth';
 import store from './store';
 
 import './styles/global.css';
-import App from './routes.js';
+import App from './app';
 
 ReactDOM.render(
   <React.StrictMode>

@@ -30,8 +30,8 @@ input[type='search']:focus,
 input[type='email']:focus,
 input[type='password']:focus,
 input[type='date']:focus,
-input[type='text']:disabled,
 input[type='search']:focus,
+input[type='text']:disabled,
 input[type='email']:disabled,
 input[type='password']:disabled,
 input[type='date']:disabled {
@@ -131,4 +131,17 @@ a{
 }
 li{
   list-style-type: none;
+}
+@keyframes animation-in {
+  0%{
+    opacity: 0;
+    transform: translatex(-40px);
+  }
+  100%{
+    opacity: 1;
+    transform: translatex(0);
+  }
+}
+.animation-in{
+  animation: animation-in 0.5s both;
 }

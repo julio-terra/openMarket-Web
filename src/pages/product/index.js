@@ -1,17 +1,21 @@
 import { useEffect, useState } from 'react';
-import api from '../../services/axios';
+import { useParams } from 'react-router-dom';
+
 import Slider from '../../components/slider';
 import Products from '../../components/product';
 
+import api from '../../services/axios';
+
 import './styles.css';
 
-const Product = ({match}) =>{
+const Product = () =>{
+  let params = useParams()
   const [productData, setproductData] = useState();
   const [productsData, setProductsData] = useState();
   const [userData, setUserData] = useState();
   useEffect(() =>{
     const request = async () =>{
-      const productResponse = await api.get(`product/${match.params.id}`);
+      const productResponse = await api.get(`product/${params.id}`);
       setproductData(productResponse.data.product);
       const userResponse = await api.get(`user/${productResponse.data.product.user_id}`);
       setUserData(userResponse.data.user);
@@ -19,7 +23,7 @@ const Product = ({match}) =>{
       setProductsData(productsResponse.data.products);
     }
     request();
-  },[match.params.id])
+  },[params])
   return(
     <div className="bg-primary product-page-container">
       <div className="container">

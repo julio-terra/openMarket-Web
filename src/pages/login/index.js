@@ -9,15 +9,17 @@ const Login = () =>{
   const [ loading, setLoading ] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  
   const { signIn} = useAuth();
-
+  const handleSubmit = event => {
+    event.preventDefault();
+    signIn(email, password, setLoading)
+  }
   return(
     <div className="container-fluid h-100 d-flex justify-content-center align-items-center bg-primary">
-      <div className="bg-dark login-box">
-        <h3 className="text-white font-weight-bold">Login</h3>
-        <small className="text-white">Enter your details to login and buy.</small>
-        <div className="input-group mt-4">
+      <form onSubmit={handleSubmit}  className="bg-dark login-box animation-in">
+        <h2 className="text-white font-weight-bold">Login</h2>
+        <small className="text-white">Enter data to enter and buy on openMarket</small>
+        <div className="input-group mt-2">
           <div className="input-group-prepend">
             <span className="input-group-text p-0 border-0 bg-primary">
               <span className="mdi mdi-email mx-3" />
@@ -30,7 +32,7 @@ const Login = () =>{
             </span>
           </div>
         </div>
-        <div className="input-group mt-4">
+        <div className="input-group mt-2">
           <div className="input-group-prepend">
             <span className="input-group-text p-0 border-0 bg-primary">
               <span className="mdi mdi-lock mx-3" />
@@ -43,11 +45,11 @@ const Login = () =>{
             </span>
           </div>
         </div>
-        <div className="col-12 mt-3">
+        <div className="col-12 mt-2">
         {!loading?
           <button
             className="btn btn-secondary btn-lg w-100"
-            onClick={() => signIn(email, password, setLoading)}
+            type="submit"
           >
             Access
           </button>
@@ -57,7 +59,7 @@ const Login = () =>{
           </button>
           }
         </div>
-        <div className="col-12 d-flex justify-content-end mt-3">
+        <div className="col-12 d-flex justify-content-end mt-2">
           <Link
             className="btn btn-outline-secondary btn-sm register col-6"
             to="/register" 
@@ -65,7 +67,7 @@ const Login = () =>{
             Register
           </Link>
         </div>
-      </div>
+      </form>
     </div>
   )
 };
