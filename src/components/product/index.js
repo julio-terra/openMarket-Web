@@ -1,36 +1,21 @@
+import React from 'react'
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-
 
 import './styles.css';
 
-const Product = ({_id, photo, name, price}) =>{
-  const dispatch = useDispatch();
-  const { costumer } = useSelector((state) => state.cart);
-  const add = () =>{
-    dispatch({type: '@cart/SET_CUSTOMER'})
-    console.log(costumer)
-  }
-  const to = `/product/${_id}`;
+const Product = ({product}) =>{
   return(
-    <div className="bg-dark product bg-dark animation-in">
+    <Link to={`/product/${product?._id}`} onClick={() => window.scrollTo(0,0)} className="bg-white product bg-dark text-dark">
       <img
         className="bg-white"
-        src={photo}
+        src={product?.fileUrl}
         alt="..." 
       />
-      <Link to={to}>
-        <h5 onClick={() => window.scrollTo(0,0)}>{name}</h5>
-      </Link>
+      <h5>{product?.name}</h5>
       <div>
-        <button
-          className="btn btn-secondary"
-        >
-          add to cart
-        </button>
-        <badge className="badge badge-secondary">{price},00</badge>
+        <strong className="text-green">{product?.price?.toLocaleString('en-us', { style: 'currency', currency: 'USD' })}</strong>
       </div>
-    </div>
+    </Link>
   )
 };
 

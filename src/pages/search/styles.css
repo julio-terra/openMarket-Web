@@ -1,7 +1,30 @@
 .search-container{
     padding-top: 70px;
-    min-height: 100vh;
+    transition: all 1s 0s ease;
 }
-.search-container input::placeholder{
-   color: rgb(var(--secondary));
+.search-container.active{
+    height: 50px;
+}
+.search-container.desActive{
+    height: calc(100vh - 95px);
+}
+.search-container .btn{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 100%;
+}
+.search-result{
+    min-height: calc(100vh - 95px);
+    padding-top: 50px;
+}
+.search-result .products{
+    min-height: calc(100vh - 95px);
+}
+.pagination .page-item.active .page-link{
+    background-color: rgb(var(--dark))!important;
+    border-color: rgb(var(--dark))!important;
+    color: white!important;
+}
+.pagination .page-link{
+    color: rgb(var(--dark))!important;
 }

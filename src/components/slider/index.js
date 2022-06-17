@@ -8,7 +8,7 @@ import 'slick-carousel/slick/slick-theme.css';
 const Sliders = ({children}) =>{
   const childrens = children?.slice(Math.max(children.length - 6, 0))
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: childrens?.length <= 4? childrens?.length - 1 : 4,
@@ -23,7 +23,7 @@ const Sliders = ({children}) =>{
               slidesToShow: childrens?.length <= 3? childrens?.length - 1 : 3,
               slidesToScroll: 1,
               infinite: true,
-              dots: true
+              dots: false
             }
           },
           {
@@ -45,7 +45,7 @@ const Sliders = ({children}) =>{
         ]
       };
       return(
-        <Slider {...settings} className="col-10 offset-1 col-sm-12 offset-sm-0">
+        <Slider {...settings} className="col-12">
           {childrens}
         </Slider>
       )

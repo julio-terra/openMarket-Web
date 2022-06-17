@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../hooks/auth';
 
-import Logo from '../../assets/logo.png';
+import logo from '../../assets/logo.png';
 
 import './styles.css';
 
@@ -13,17 +13,15 @@ const Navbar = () =>{
   };
 
   return(
-    <nav className="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
+    <nav className="navbar navbar-expand-lg navbar-light bg-secondary">
       <div className="container">
-      <Link
-        to="/"
-        className="navbar-brand"
-      >
-        <img src={Logo}
-          style={{width: '120px'}}
-          alt="..."
-        />
-      </Link>
+        <Link to="/" className="navbar-brand">
+          <img 
+            src={logo}
+            style={{width: '120px'}}
+            alt="..."
+          />
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -38,48 +36,33 @@ const Navbar = () =>{
         id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link
-                to="/"
-                className="nav-link"
-              >
+              <Link to="/" className="nav-link">
                 Home
               </Link>
             </li>
             <li className="nav-item active">
-              <Link
-                to="/profile"
-                className="nav-link"
-              >
+              <Link to="/profile" className="nav-link">
                 Profile
               </Link>
             </li>
             <li className="nav-item active">
-              <Link
-                to="/product/search"
-                className="nav-link"
-              >
+              <Link to="/product/search" className="nav-link">
                 Search
               </Link>
             </li>
             <li className="nav-item active">
-              <Link
-                to="/card"
-                className="nav-link"
-              >
-                Card
+              <Link to="/cart" className="nav-link">
+                Cart
               </Link>
             </li>
-            <li className="nav-item bg-secondary px-4">
-              <div
-                className="nav-link"
-                onClick={() => signOut()}
-              >
+            <li className="nav-item bg-dark px-4">
+              <div className="nav-link text-white" onClick={() => signOut()}>
                 Logout
               </div>
             </li>
           </ul>
         </div>
-        </div>
+      </div>
     </nav>
   )
 };

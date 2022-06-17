@@ -7,15 +7,18 @@ import {
 
 import Login from '../pages/login';
 import Register from '../pages/register';
+import AuthLayout from '../layouts/authLayout';
 
 const AuthRoutes = () => {
   return(
     <BrowserRouter>
-      <Routes>
-        <Route path='*' element={<Navigate to="/" />} />
-        <Route exact path="/" element={<Login />} />
-        <Route exact path="/register" element={<Register />} />
-      </Routes>
+      <AuthLayout>
+        <Routes>
+          <Route path='*' element={<Navigate to="/" />} />
+          <Route exact path="/" element={<Login />} />
+          <Route exact path="/register" element={<Register />} />
+        </Routes>
+      </AuthLayout>
     </BrowserRouter>
   )
 };

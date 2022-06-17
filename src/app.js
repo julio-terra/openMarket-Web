@@ -9,7 +9,8 @@ const App = () => {
     return(
       <DefaultRoutes />
     )
-  }else{
+  }
+  if(!logged){
     return(
       <AuthRoutes />
     )

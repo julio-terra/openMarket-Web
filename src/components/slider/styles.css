@@ -1,9 +1,16 @@
-.slick-dots li button:before {
-    color: rgb(var(--secondary))!important;
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before{
+  color: rgb(var(--dark));
 }
-.slick-dots li.slick-active button:before {
-    color: rgb(var(--secondary))!important;
+@media(max-width: 576px){
+  .screenshots{
+    overflow: hidden;
+  }
 }
-.slick-prev:before, .slick-next:before {
-    color: rgb(var(--secondary))!important;
+@media(min-width: 576px){
+  .slick-prev:before,
+  .slick-next:before {
+    color: rgb(var(--dark))!important;
+    opacity: 1!important;
+  }
 }

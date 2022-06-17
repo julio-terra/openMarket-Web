@@ -1,89 +1,83 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/auth';
+import { Link } from 'react-router-dom'
+
+import Button from '../../components/button';
 
 import './styles.css';
 
 const Register = () =>{
-  const history = useNavigate();
-  const { signUp } = useAuth();
-  const [ loading, setLoading ] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const handleSubmit = async event =>{
+  const [seePassword, setSeePassword] = useState(false);
+  const { signUp, loading } = useAuth();
+  const handleSubmit = event => {
     event.preventDefault();
-    await signUp(name, email, password, setLoading);
+    signUp(name, email, password)
   }
-  
   return(
-    <div className="container-fluid h-100 d-flex justify-content-center align-items-center bg-primary">
-      <form onSubmit={handleSubmit} className="bg-dark register-box animation-in">
-        <h2 className="text-white font-weight-bold">Register</h2>
-        <small className="text-white">Enter your details to login and buy.</small>
-        <div className="input-group mt-2">
-          <div className="input-group-prepend">
-            <span className="input-group-text p-0 border-0 bg-primary">
-              <span className="mdi mdi-account  mx-3" />
-              <input
-                type="text" 
-                className="form form-control form-control-lg" 
-                placeholder="name"
-                onChange={e => setName(e.target.value)}
-              />
-            </span>
+    <div className="col-12">
+      <h1>Welcome</h1>
+      <span>Welcome to openMakert! Please enter your details</span>
+      <form action="submit" onSubmit={handleSubmit}>
+        <label htmlFor="name" className="mt-4">Username</label>
+        <br />
+        <div className="input-group mt-1">
+          <div className="input-group-prepend w-100">
+            <input
+              type="name" 
+              placeholder="Enter your username"
+              id="name"
+              required
+              name="name"
+              className="form form-control form-control w-100 border-0" 
+              onChange={e => setName(e.target.value)}
+            />
           </div>
         </div>
-        <div className="input-group mt-2">
-          <div className="input-group-prepend">
-            <span className="input-group-text p-0 border-0 bg-primary">
-              <span className="mdi mdi-email mx-3" />
-              <input
-                type="email" 
-                className="form form-control form-control-lg" 
-                placeholder="email"
-                onChange={e => setEmail(e.target.value)}
-              />
-            </span>
+        <label htmlFor="email" className="mt-3">Email</label>
+        <br />
+        <div className="input-group mt-1">
+          <div className="input-group-prepend w-100">
+            <input
+              type="email" 
+              placeholder="Enter your email"
+              id="email"
+              required
+              name="email"
+              className="form form-control form-control w-100 border-0" 
+              onChange={e => setEmail(e.target.value)}
+            />
           </div>
         </div>
-        <div className="input-group mt-2">
-          <div className="input-group-prepend">
-            <span className="input-group-text p-0 border-0 bg-primary">
-              <span className="mdi mdi-lock mx-3" />
+        <label htmlFor="password" className="mt-3">Password</label>
+        <br />
+        <div className="input-group mt-1">
+          <div className="input-group-prepend w-100">
+            <span className="input-group-text p-0 border-0 bg-transparent">
               <input
-                type="password" 
-                className="form form-control form-control-lg" 
-                placeholder="password"
+                type={seePassword? "text": "password"}
+                placeholder="Enter your password"
+                id="password"
+                required
+                name="password"
+                className="form form-control form-control w-100 border-0" 
                 onChange={e => setPassword(e.target.value)}
               />
+              <span
+                className={`mdi mx-3 ${seePassword? "mdi-eye": "mdi-eye-off"}`}
+                onClick={() => setSeePassword(!seePassword)}
+              />
             </span>
           </div>
         </div>
-        <div className="col-12 mt-2">
-          {!loading?
-          <button
-            className="btn btn-secondary btn-lg w-100"
-            type="submit"
-          >
-            Register
-          </button>
-          :
-          <button className="btn btn-secondary btn-lg w-100">
-            <span class="spinner-border spinner-border-sm" />
-          </button>
-          }
-        </div>
-        <div className="col-12 d-flex justify-content-end mt-2">
-          <Link
-            className="btn btn-outline-secondary btn-sm login col-6"
-            to="/"
-          >
-            Login
-          </Link>
-        </div>
+          <Button className="btn btn-dark w-100 mt-3" type="submit" loading={loading}>
+            Sign up
+          </Button>
+        <p className="mt-2">already have an account? <Link to="/login">Sign in</Link></p>
       </form>
     </div>
-  );
+  )
 };
 export default Register;

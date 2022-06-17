@@ -1,0 +1,10 @@
+.loading{
+    height: calc(100vh - 95px);
+}
+.loading > span{
+    width: 3rem;
+    height: 3rem;
+    border-width: 0.32rem;
+    border-color: rgb(var(--dark));
+    border-right-color: transparent;
+}

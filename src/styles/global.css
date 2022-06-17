@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 :root {
-  --primary: 13, 14, 17;
-  --secondary: 245, 79, 0;
-  --dark: 24, 25, 29;
+  --primary: 198, 22, 23;
+  --secondary: 235, 235, 235;
+  --dark: 6, 14, 31;
+  --gray: 148, 152, 158;
+  --danger: 236, 6, 6;
+  --success: 6, 206, 19;
 }
 
 html,
@@ -11,137 +14,127 @@ body {
   font-family: 'roboto', sans-serif;
   letter-spacing: -0.03em;
 }
-
-input[type='text'],
-input[type='search'],
-input[type='email'],
-input[type='password'],
-input[type='date'] {
-  font-size: 15px;
+.btn{
+  transition: all 0.7s 0s ease;
 }
-
-input[type='text'],
-input[type='search'],
-input[type='email'],
-input[type='password'],
-input[type='date'],
-input[type='text']:focus,
-input[type='search']:focus,
-input[type='email']:focus,
-input[type='password']:focus,
-input[type='date']:focus,
-input[type='search']:focus,
-input[type='text']:disabled,
-input[type='email']:disabled,
-input[type='password']:disabled,
-input[type='date']:disabled {
-  background-color: rgb(var(--primary));
-  border: none;
-  outline: none;
+.btn-primary{
+  background-color: rgb(var(--primary))!important;
+  color: white!important;
+  border-color: rgb(var(--primary));
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active{
+  border-color: rgb(var(--primary))!important;
+  background-color: transparent!important;
+  color: rgb(var(--primary))!important;
+}
+.btn-outline-primary{
+  border-color: rgb(var(--primary))!important;
+  color: rgb(var(--primary));
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active{
+  background-color: rgb(var(--primary))!important;
   color: white;
 }
-
-.btn {
-  font-size: 15px;
+.btn-dark{
+  background-color: rgb(var(--dark))!important;
+  color: white!important;
 }
-
-.btn-secondary.rounded-circle {
-  padding: 6px 14px;
+.btn-outline-dark{
+  border-color: rgb(var(--dark))!important;
+  color: rgb(var(--dark));
 }
-
-.bg-primary {
-  background-color: rgb(var(--primary)) !important;
+a, a:hover{
+  text-decoration: none!important;
 }
-
-.bg-secondary {
-  background-color: rgb(var(--secondary)) !important;
+input[type="text"],
+input[type="name"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="text"]:focus,
+input[type="name"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="text"]:enabled,
+input[type="name"]:enabled,
+input[type="email"]:enabled,
+input[type="password"]:enabled,
+input[type="search"]:enabled,
+input[type="number"]:enabled,
+input[type="text"]:disabled,
+input[type="name"]:disabled,
+input[type="email"]:disabled,
+input[type="password"]:disabled,
+input[type="search"]:disabled,
+input[type="number"]:disabled{
+  color: rgb(var(--dark))!important;
+  font-size: 14px;
+  font-weight: 400;
+  height: 45px;
+  outline: 0!important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
 }
-.bg-dark{
-  background-color: rbg(var(--dark));
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder
+input[type="search"]::placeholder,
+input[type="number"]::placeholder{
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(var(--gray));
+}
+textarea[type="text"],
+textarea[type="text"]:focus,
+textarea[type="text"]:enabled,
+textarea[type="text"]:disabled{
+  color: rgb(var(--dark))!important;
+  font-size: 14px;
+  font-weight: 400;
+  outline: 0!important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+input[type="text"]::placeholder{
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(var(--gray));
+}
+.form-select{
+  height: 45px!important;
+  font-size: 14px!important;
+  font-weight: 400!important;
+  color: rgb(var(--gray))!important;
+}
+.bg-primary{
+  background-color: rgb(var(--primary))!important;
+}
+.bg-secondary{
+  background-color: rgb(var(--secondary))!important;
+}
+.bg-Danger{
+  background-color: rgb(var(--danger))!important;
+}
+.bg-Success{
+  background-color: rgb(var(--success))!important;
 }
 .text-primary{
   color: rgb(var(--primary))!important;
 }
-.text-secondary{
-  color: rgb(var(--secondary))!important;
+.text-white{
+  color: white!important;
+}
+.text-green{
+  color: green!important;
 }
 .text-dark{
-  color: rgb(var(--secondary))!important;
-}
-.btn-primary,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary:disabled,
-.btn-primary:hover {
-  background-color: rgb(var(--primary)) !important;
-  border-color: rgb(var(--primary));
-}
-.btn-outline-primary,
-.btn-outline-primary:focus,
-.btn-outline-primary:active,
-.btn-outline-primary:disabled,
-.btn-outline-primary:hover {
-  border-color: rgb(var(--primary));
-  color: rgb(var(--primary));
-}
-.btn-secondary,
-.btn-secondary:focus,
-.btn-secondary:active,
-.btn-secondary:disabled,
-.btn-secondary:hover {
-  background-color: rgb(var(--secondary)) !important;
-  border-color: rgb(var(--secondary));
-}
-.btn-outline-secondary,
-.btn-outline-secondary:focus,
-.btn-outline-secondary:active,
-.btn-outline-secondary:disabled,
-.btn-outline-secondary:hover {
-  border-color: rgb(var(--secondary));
-  color: rgb(var(--secondary));
-}
-.bg-primary {
-  background-color: rgb(var(--primary)) !important;
-}
-.badge{
-  font-weight: 500;
-}
-.badge.badge-primary {
-  background: rgba(var(--primary), 0.1);
-  color: rgb(var(--primary));
-}
-
-.badge.badge-secondary {
-  background: rgba(var(--secondary), 0.1);
-  color: rgb(var(--secondary));
-}
-
-.box {
-  background: #fff;
-  box-shadow: 0px 0px 11px 6px rgba(0, 0, 0, 0.08);
-  border-radius: 5px;
-  display: inline-block;
-  padding: 50px;
-}
-.dropdown:hover>.dropdown-menu {
-  display: block;
-}
-a{
-  text-decoration: none;
-}
-li{
-  list-style-type: none;
-}
-@keyframes animation-in {
-  0%{
-    opacity: 0;
-    transform: translatex(-40px);
-  }
-  100%{
-    opacity: 1;
-    transform: translatex(0);
-  }
-}
-.animation-in{
-  animation: animation-in 0.5s both;
+  color: rgb(var(--dark))!important;
 }

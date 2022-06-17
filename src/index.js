@@ -1,20 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 import { AuthProvider } from './hooks/auth';
-
-import store from './store';
-
-import './styles/global.css';
+import { CartProvider } from './hooks/cart';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import App from './app';
+import './styles/global.css';
+import { AlertProvider } from './hooks/alert';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
-    </Provider>
+    <AlertProvider>
+    <AuthProvider>
+    <CartProvider >
+      <App />
+    </CartProvider>
+    </AuthProvider>
+    </AlertProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

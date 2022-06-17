@@ -1,0 +1,17 @@
+.custom-alert{
+    width: 100vw;
+    display: flex;
+    left: 0;
+    position: fixed;
+    transition: all 1s 0s ease;
+}
+.custom-alert.active{
+    bottom: 0;
+}
+.custom-alert.desActive{
+    bottom: -100%;
+}
+.custom-alert span{
+    color: white;
+    font-size: 15px;
+}

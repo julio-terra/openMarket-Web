@@ -1,0 +1,42 @@
+.profile{
+    padding-top: 100px;
+    min-height: calc(100vh - 95px);
+}
+.profile .products-wrapper{
+    overflow-x: scroll;
+}
+.profile .products{
+    overflow-y: scroll;
+    height: 80vh;
+}
+.profile .products .img{
+    height: 50px;
+    overflow-y: hidden;
+}
+.profile .products img{
+    width: 50px;
+    height: 50px;
+}
+.products a > div{
+    overflow-x: hidden;
+}
+.profile .products span{
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+input[type=file]{
+    font-size: 14px;
+}
+input[type=file]::-webkit-file-upload-button {
+    font-size: 14px;
+    color: white;
+    border: none;
+    background: rgb(var(--dark));
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 3px;
+}

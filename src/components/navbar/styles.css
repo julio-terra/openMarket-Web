@@ -3,6 +3,7 @@
   border-radius: 20px;
 }
 .nav-link{
-  color: white!important;
+  color: rgb(var(--dark))!important;
   font-size: 15px;
+  font-weight: 500;
 }

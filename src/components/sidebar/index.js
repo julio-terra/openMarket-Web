@@ -47,9 +47,9 @@ const Sidebar = () =>{
         <li onClick={() =>setOpened('closed')}>
           <Link 
             className="text-white"
-            to="/card"
+            to="/cart"
           >
-            Card
+            Cart
           </Link>
         </li>
         <li onClick={() =>setOpened('closed')}>
