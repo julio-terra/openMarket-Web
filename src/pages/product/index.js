@@ -17,16 +17,16 @@ const Product = () =>{
   const [userData, setUserData] = useState();
   useEffect(() =>{
     const request = async () =>{
-      const productResponse = await api.get(`product/${params.id}`);
-      setproductData(productResponse.data.product);
-      const userResponse = await api.get(`user/${productResponse.data.product.user_id}`);
-      setUserData(userResponse.data.user);
+      const productResponse = await api.get(`/product/${params.id}`);
+      setproductData(productResponse.data?.product);
+      const userResponse = await api.get(`/user/${productResponse.data.product.user_id}`);
+      setUserData(userResponse.data?.user);
     }
     request();
   },[params])
   useEffect(() =>{
     const request = async () =>{
-      var response  = await api.get('products')
+      var response  = await api.get('/products')
       setProductsData(response.data.products)
     }
     request()
@@ -62,7 +62,7 @@ const Product = () =>{
           <h3>{productData?.category}</h3>
           <Slider>
             {
-              productsData?.filter(p =>p.category === productData.category)
+              productsData?.filter(p =>p.category === productData?.category)
               .map(e =>(
                 <div className="p-1">
                   <Products product={e}/>
@@ -75,7 +75,7 @@ const Product = () =>{
           <h3>more of: {userData?.name}</h3>
           <Slider>
             {
-              productsData?.filter(p =>p.user_id === userData._id)
+              productsData?.filter(p =>p.user_id === userData?._id)
               .map(e =>(
                 <div className="p-1">
                   <Products product={e}/>
