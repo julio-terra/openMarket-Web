@@ -1,4 +1,5 @@
 import { createContext, useState, useContext } from 'react';
+import { isExpired } from "react-jwt";
 import { useAlert } from './alert';
 import api from '../services/axios';
 import validator from 'validator';
@@ -9,9 +10,12 @@ const AuthProvider = ({ children }) => {
   const { triggerAlert } = useAlert();
   const [logged, setLogged] = useState(() => {
 
-    const isLogged = localStorage.getItem('@auth:token');
-
-    return !!isLogged;
+    const token = localStorage.getItem('@auth:token');
+    if(!token){
+      return false
+    }
+    
+    return !isExpired(token)
   });
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('@auth:user')));
   const [loading, setLoading] = useState(false);

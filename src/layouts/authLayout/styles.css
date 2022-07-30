@@ -3,16 +3,17 @@
     overflow-x: hidden;
 }
 .authLayout h1{
-    font-size: 48px;
+    font-size: 45px;
     font-weight: 500;
+    margin: 0;
 }
-.authLayout span{
+.authLayout h5{
     color: rgb(var(--gray));
     font-size: 16px;
-    font-family: 400;
+    font-weight: 400;
 }
 .authLayout label{
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
 }
 .authLayout input{
@@ -23,9 +24,8 @@
     border-radius: 3px;
 }
 .authLayout .btn{
-    font-size: 16px;
-    font-weight: 400;
-    height: 45px;
+    font-size: 14px;
+    height: 40px;
 }
 .authLayout p{
     font-size: 13px;

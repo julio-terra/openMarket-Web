@@ -18,9 +18,9 @@ const Login = () =>{
   return(
     <div className="col-12">
       <h1>Welcome back</h1>
-      <span>Welcome Back! Please enter your details</span>
-      <form action="submit" onSubmit={handleSubmit}>
-        <label htmlFor="email" className="mt-4">Email</label>
+      <h5>Welcome Back! Please enter your details</h5>
+      <form action="submit" onSubmit={handleSubmit} className="mt-3">
+        <label htmlFor="email">Email</label>
         <br />
         <div className="input-group mt-1">
           <div className="input-group-prepend w-100">
@@ -35,7 +35,7 @@ const Login = () =>{
             />
           </div>
         </div>
-        <label htmlFor="password" className="mt-3">Password</label>
+        <label htmlFor="password" className="mt-2">Password</label>
         <br />
         <div className="input-group mt-1">
           <div className="input-group-prepend w-100">
@@ -56,7 +56,7 @@ const Login = () =>{
             </span>
           </div>
         </div>
-          <Button className="btn btn-dark w-100 mt-3" type="submit" loading={loading}>
+          <Button className="btn btn-dark w-100 mt-2" type="submit" loading={loading}>
             Sign in
           </Button>
         <p className="mt-2">Don’t have an account? <Link to="/register">Sign up for free</Link></p>

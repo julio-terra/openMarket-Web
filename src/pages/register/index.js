@@ -19,11 +19,11 @@ const Register = () =>{
   return(
     <div className="col-12">
       <h1>Welcome</h1>
-      <span>Welcome to openMakert! Please enter your details</span>
-      <form action="submit" onSubmit={handleSubmit}>
-        <label htmlFor="name" className="mt-4">Username</label>
+      <h5>Welcome to openMakert! Please enter your details</h5>
+      <form action="submit" onSubmit={handleSubmit} className="mt-3">
+        <label htmlFor="name">Username</label>
         <br />
-        <div className="input-group mt-1">
+        <div className="input-group">
           <div className="input-group-prepend w-100">
             <input
               type="name" 
@@ -36,9 +36,9 @@ const Register = () =>{
             />
           </div>
         </div>
-        <label htmlFor="email" className="mt-3">Email</label>
+        <label htmlFor="email" className="mt-2">Email</label>
         <br />
-        <div className="input-group mt-1">
+        <div className="input-group">
           <div className="input-group-prepend w-100">
             <input
               type="email" 
@@ -51,9 +51,9 @@ const Register = () =>{
             />
           </div>
         </div>
-        <label htmlFor="password" className="mt-3">Password</label>
+        <label htmlFor="password" className="mt-2">Password</label>
         <br />
-        <div className="input-group mt-1">
+        <div className="input-group">
           <div className="input-group-prepend w-100">
             <span className="input-group-text p-0 border-0 bg-transparent">
               <input
